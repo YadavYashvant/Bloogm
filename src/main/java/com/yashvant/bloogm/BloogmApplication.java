@@ -21,7 +21,7 @@ public class BloogmApplication implements CommandLineRunner {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
+   @Autowired
     private RoleRepo roleRepo;
 
     public static void main(String[] args) {

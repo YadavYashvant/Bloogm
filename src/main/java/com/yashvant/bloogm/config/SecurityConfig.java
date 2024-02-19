@@ -12,7 +12,6 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -52,24 +51,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http.
-                csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/token/**").permitAll()
-                        .anyRequest().authenticated()
-
-                )
-                .requestMatchers(PUBLIC_URLS)
-                .permitAll()
-                .antMatchers(HttpMethod.GET)
-                .permitAll()
-                .anyRequest()
-                .authenticated()
-                .and().exceptionHandling()
-                .authenticationEntryPoint(this.jwtAuthenticationEntryPoint)
+        http.csrf().disable()
+                .authorizeRequests()
+                .requestMatchers(PUBLIC_URLS).permitAll()
+                .requestMatchers(HttpMethod.GET).permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+;
+
+        http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
         http.addFilterBefore(this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
@@ -81,7 +74,6 @@ public class SecurityConfig {
 
     }
 
-	/*
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
@@ -105,9 +97,9 @@ public class SecurityConfig {
 
 	}
 
-	 */
 
-    /*
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -115,7 +107,8 @@ public class SecurityConfig {
 
     }
 
-    */
+
+
 
 
     @Bean
@@ -123,14 +116,14 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-	/*
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
 
-	 */
+
+
 
     @Bean
     public DaoAuthenticationProvider daoAuthenticationProvider() {
