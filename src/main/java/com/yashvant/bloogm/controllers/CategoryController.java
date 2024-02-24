@@ -3,7 +3,7 @@ package com.yashvant.bloogm.controllers;
 import com.yashvant.bloogm.payloads.ApiResponse;
 import com.yashvant.bloogm.payloads.CategoryDto;
 import com.yashvant.bloogm.services.CategoryService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
