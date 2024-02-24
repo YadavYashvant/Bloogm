@@ -8,7 +8,7 @@ import com.yashvant.bloogm.payloads.UserDto;
 import com.yashvant.bloogm.repositories.UserRepo;
 import com.yashvant.bloogm.security.JwtTokenHelper;
 import com.yashvant.bloogm.services.UserService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

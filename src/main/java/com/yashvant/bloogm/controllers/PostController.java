@@ -6,7 +6,7 @@ import com.yashvant.bloogm.payloads.PostDto;
 import com.yashvant.bloogm.payloads.PostResponse;
 import com.yashvant.bloogm.services.FileService;
 import com.yashvant.bloogm.services.PostService;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;

@@ -6,7 +6,7 @@ import java.util.Map;
 import com.yashvant.bloogm.payloads.ApiResponse;
 import com.yashvant.bloogm.payloads.UserDto;
 import com.yashvant.bloogm.services.UserService;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
