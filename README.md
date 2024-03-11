@@ -1,2 +1,2 @@
 ## A Full stack blogging application using springboot(and probably nextjs in future)
-<br>(UNDER DEVELOPEMENT!)</br>
+<br><i>(UNDER DEVELOPEMENT!)</i></br>
