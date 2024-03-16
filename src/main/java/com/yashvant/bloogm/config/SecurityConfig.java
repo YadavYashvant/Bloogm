@@ -24,6 +24,8 @@ import com.yashvant.bloogm.security.CustomUserDetailService;
 import com.yashvant.bloogm.security.JwtAuthenticationEntryPoint;
 import com.yashvant.bloogm.security.JwtAuthenticationFilter;
 
+// versioning and security
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
