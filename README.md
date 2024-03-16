@@ -1,2 +1,3 @@
-## A Full stack blogging application using springboot(and probably nextjs in future)
+## A Full stack blogging application using springboot
+- Reactjs is used as frontend.
 <br><i>(UNDER DEVELOPEMENT!)</i></br>
