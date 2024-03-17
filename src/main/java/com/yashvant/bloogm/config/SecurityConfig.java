@@ -24,7 +24,7 @@ import com.yashvant.bloogm.security.CustomUserDetailService;
 import com.yashvant.bloogm.security.JwtAuthenticationEntryPoint;
 import com.yashvant.bloogm.security.JwtAuthenticationFilter;
 
-// versioning and security
+// versioning and security (Some errors are yet to be resolved)
 
 @Configuration
 @EnableWebSecurity
